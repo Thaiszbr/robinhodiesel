@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robinho Diesel | Injeção Eletrônica e Bombas</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#0d47a1',
+                            darkblue: '#041029',
+                            card: '#0a193a',
+                            orange: '#f97316',
+                            darkorange: '#c2410c'
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #041029;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Animação de Scroll (Revelação) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Botão Brilhante */
+        .btn-hover-effect {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .btn-hover-effect::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-20deg);
+            transition: all 0.5s ease;
+        }
+        .btn-hover-effect:hover::after {
+            left: 150%;
+        }
+        
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+            border-color: #f97316; /* Laranja no hover */
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-orange selection:text-white">
+
+    <!-- HERO SECTION (CABEÇALHO GIGANTE) -->
+    <section class="relative w-full h-[85vh] min-h-[600px] flex items-center justify-center bg-[#041029]">
+        <!-- Fundo de Imagem -->
+        <div class="absolute inset-0 w-full h-full flex justify-center items-center overflow-hidden">
+            <img 
+                src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RNCpAAyiQ8BT74aoGZXN5OJXgkvlHBwydiSkIwQy3lexyD5Jfchj6muZQgO5CBUpC9aF-sfzjusk-qxryid8D5Lx7_gMVHw_F4Zcd-bA7lEC7EHL25ib-BadTo5ET62jTNkjEonfd0xJT0=s1360-w1360-h1020-rw" 
+                alt="Fundo Robinho Diesel" 
+                class="w-full h-full object-contain max-w-6xl mx-auto opacity-70"
+            >
+            <!-- Overlay Escuro para dar leitura -->
+            <div class="absolute inset-0 bg-gradient-to-b from-[#041029]/90 via-[#041029]/50 to-[#041029]"></div>
+        </div>
+
+        <!-- Conteúdo do Hero -->
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-10">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6 drop-shadow-2xl reveal active">
+                ROBINHO <span class="text-brand-orange">DIESEL</span>
+            </h1>
+            
+            <p class="text-lg md:text-2xl text-gray-300 font-light mb-10 max-w-2xl mx-auto reveal active" style="transition-delay: 100ms;">
+                Diagnóstico preciso e performance garantida para sua frota rodar sem problemas.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal active" style="transition-delay: 200ms;">
+                <a href="https://wa.me/5566999396665?text=Ol%C3%A1%20Robinho%2C%20vim%20pelo%20instagram%20da%20Robinho%20Diesel." target="_blank" 
+                   class="btn-hover-effect flex items-center justify-center w-full sm:w-auto bg-brand-orange/20 hover:bg-brand-orange/40 border border-brand-orange backdrop-blur-md text-white font-bold py-4 px-8 rounded-full shadow-[0_0_15px_rgba(249,115,22,0.3)] transition-all text-lg">
+                    <i class="fab fa-whatsapp text-2xl mr-3"></i> Orçamentos / Oficina
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAIXA DE INFORMAÇÕES (INFO STRIP) -->
+    <div class="relative z-20 -mt-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            
+            <!-- Cartão 1: Horário -->
+            <div class="bg-brand-card border border-white/10 shadow-2xl rounded-2xl p-6 flex items-center gap-4 text-left">
+                <div class="bg-brand-blue/20 p-4 rounded-full text-brand-blue shrink-0">
+                    <i class="far fa-clock text-2xl"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white text-lg">Horário de Atendimento</h3>
+                    <p class="text-gray-400 text-sm md:text-base">Segunda a Sexta, 07:00 às 18:00</p>
+                    <p class="text-xs text-brand-orange font-semibold mt-1">Exceto Feriados</p>
+                </div>
+            </div>
+
+            <!-- Cartão 2: Financeiro (Agora Todo Clicável) -->
+            <a href="https://wa.me/5566999219295?text=Ol%C3%A1%20Tatiane%2C%20vim%20pelo%20instagram%20da%20Robinho%20Diesel." target="_blank" 
+               class="block bg-brand-card border border-white/10 shadow-2xl rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:border-green-500/40 transition-all group cursor-pointer">
+                <div class="flex items-center gap-4 text-left">
+                    <div class="bg-green-500/10 p-4 rounded-full text-green-400 shrink-0">
+                        <i class="fas fa-file-invoice-dollar text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-lg">Setor Financeiro</h3>
+                        <p class="text-gray-400 text-sm md:text-base">Falar com Tatiane</p>
+                    </div>
+                </div>
+                <div class="w-full sm:w-auto inline-flex items-center justify-center bg-green-500/10 group-hover:bg-green-500/30 border border-green-500/40 text-green-400 font-bold py-3 px-5 rounded-xl transition-all">
+                    <i class="fab fa-whatsapp mr-2 text-xl"></i> WhatsApp
+                </div>
+            </a>
+            
+        </div>
+    </div>
+
+    <!-- SEÇÃO: NOSSOS SERVIÇOS -->
+    <section class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16 reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Nossos Serviços</h2>
+            <div class="w-24 h-1 bg-brand-orange mx-auto rounded-full"></div>
+        </div>
+
+        <!-- Grid de Serviços -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <a href="https://wa.me/5566999396665?text=Ol%C3%A1%20Robinho%2C%20gostaria%20de%20falar%20sobre%20caminh%C3%B5es%20Euro%205%20e%20Euro%206.%20Vim%20pelo%20instagram%20da%20Robinho%20Diesel." target="_blank" 
+               class="block service-card bg-brand-card border border-white/5 rounded-2xl p-8 reveal group cursor-pointer flex flex-col justify-between" style="transition-delay: 100ms;">
+                <div>
+                    <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center text-brand-orange text-2xl mb-6">
+                        <i class="fas fa-truck-moving"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-white mb-3">Euro 5 e Euro 6</h3>
+                    <p class="text-gray-400 leading-relaxed">Manutenção especializada e diagnóstico para caminhões DAF e as mais novas tecnologias do mercado.</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-white/5 flex items-center text-brand-orange text-sm font-semibold opacity-70 group-hover:opacity-100 transition-opacity">
+                    <i class="fab fa-whatsapp mr-2 text-lg"></i> Falar sobre isso
+                </div>
+            </a>
+
+            <a href="https://wa.me/5566999396665?text=Ol%C3%A1%20Robinho%2C%20gostaria%20de%20falar%20sobre%20bombas%20injetoras.%20Vim%20pelo%20instagram%20da%20Robinho%20Diesel." target="_blank" 
+               class="block service-card bg-brand-card border border-white/5 rounded-2xl p-8 reveal group cursor-pointer flex flex-col justify-between" style="transition-delay: 200ms;">
+                <div>
+                    <div class="w-14 h-14 bg-brand-blue/10 rounded-xl flex items-center justify-center text-blue-400 text-2xl mb-6">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-white mb-3">Bombas Injetoras</h3>
+                    <p class="text-gray-400 leading-relaxed">Laboratório próprio para regulagem precisa e manutenção completa de bombas injetoras mecânicas.</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-white/5 flex items-center text-brand-orange text-sm font-semibold opacity-70 group-hover:opacity-100 transition-opacity">
+                    <i class="fab fa-whatsapp mr-2 text-lg"></i> Falar sobre isso
+                </div>
+            </a>
+
+            <a href="https://wa.me/5566999396665?text=Ol%C3%A1%20Robinho%2C%20gostaria%20de%20falar%20sobre%20bicos%20injetores.%20Vim%20pelo%20instagram%20da%20Robinho%20Diesel." target="_blank" 
+               class="block service-card bg-brand-card border border-white/5 rounded-2xl p-8 reveal group cursor-pointer flex flex-col justify-between" style="transition-delay: 300ms;">
+                <div>
+                    <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center text-brand-orange text-2xl mb-6">
+                        <i class="fas fa-gas-pump"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-white mb-3">Bicos Injetores</h3>
+                    <p class="text-gray-400 leading-relaxed">Tecnologia de ponta para teste, revisão e reparo do sistema de bicos injetores a diesel.</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-white/5 flex items-center text-brand-orange text-sm font-semibold opacity-70 group-hover:opacity-100 transition-opacity">
+                    <i class="fab fa-whatsapp mr-2 text-lg"></i> Falar sobre isso
+                </div>
+            </a>
+
+            <a href="https://wa.me/5566999396665?text=Ol%C3%A1%20Robinho%2C%20preciso%20de%20atendimento%20externo.%20Vim%20pelo%20instagram%20da%20Robinho%20Diesel." target="_blank" 
+               class="block service-card bg-brand-card border border-white/5 rounded-2xl p-8 reveal group cursor-pointer flex flex-col justify-between" style="transition-delay: 400ms;">
+                <div>
+                    <div class="w-14 h-14 bg-brand-blue/10 rounded-xl flex items-center justify-center text-blue-400 text-2xl mb-6">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-white mb-3">Atendimento Externo</h3>
+                    <p class="text-gray-400 leading-relaxed">Nós vamos até a sua fazenda! Atendimento rápido direto no campo em Sinop e região.</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-white/5 flex items-center text-brand-orange text-sm font-semibold opacity-70 group-hover:opacity-100 transition-opacity">
+                    <i class="fab fa-whatsapp mr-2 text-lg"></i> Solicitar atendimento
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- SEÇÃO: LOCALIZAÇÃO -->
+    <section class="py-20 bg-[#020817]">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Venha nos fazer uma visita</h2>
+            <p class="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">Laboratório próprio equipado para garantir o melhor diagnóstico e manutenção para o seu veículo diesel.</p>
+            
+            <!-- Cartão Integrado de Localização -->
+            <div class="bg-brand-card border border-white/10 rounded-2xl overflow-hidden shadow-2xl group">
+                
+                <!-- Imagem Clicável (Abre o Maps) -->
+                <a href="https://maps.app.goo.gl/np3oUSMniLfnscDd9" target="_blank" class="block relative overflow-hidden w-full cursor-pointer bg-[#020817]">
+                    <img 
+                        src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RkgXG_ZztZWOZbb1XrU-FRr5wQhlKBZvXZWbnhVTWAJFlVExnCiSLmLEUj6VknM_V5_N9z16-d-P6C3NCYBJkHlC7CPDZUECM31MKikXUUVrkbVS4U-q-mF9mrnCiZsWkGHF_jCrhNr2yw=s1360-w1360-h1020-rw" 
+                        alt="Fachada Robinho Diesel" 
+                        class="w-full h-auto object-contain transform transition-transform duration-700 group-hover:scale-105"
+                    >
+                    <!-- Overlay que aparece ao passar o mouse -->
+                    <div class="absolute inset-0 bg-brand-darkblue/30 group-hover:bg-brand-darkblue/10 transition-colors flex items-center justify-center">
+                        <div class="bg-brand-blue/90 text-white w-16 h-16 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg">
+                            <i class="fas fa-map-marked-alt text-2xl"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Informações de Endereço e Botão -->
+                <div class="p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 bg-brand-card">
+                    <div class="text-left flex items-start gap-4">
+                        <div class="bg-brand-orange/10 p-3 rounded-xl">
+                            <i class="fas fa-map-marker-alt text-brand-orange text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-lg">Endereço da Oficina</h4>
+                            <p class="text-gray-400 mt-1 text-sm md:text-base">Rua Joffre Camargo Guimarães, 197<br>Jardim Gramado, Sinop - MT</p>
+                        </div>
+                    </div>
+                    
+                    <a href="https://maps.app.goo.gl/np3oUSMniLfnscDd9" target="_blank"
+                       class="btn-hover-effect shrink-0 w-full md:w-auto inline-flex items-center justify-center bg-brand-blue/20 hover:bg-brand-blue/40 border border-brand-blue backdrop-blur-md text-white font-bold py-4 px-8 rounded-xl transition-all shadow-[0_0_15px_rgba(13,71,161,0.3)]">
+                        <i class="fas fa-location-arrow mr-2"></i> Como Chegar
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#020817] pt-10 pb-6 border-t border-white/5 text-center reveal">
+        <a href="https://instagram.com/robinhodiesel" target="_blank" 
+           class="inline-flex items-center gap-2 text-gray-400 hover:text-brand-orange transition-colors mb-6 text-lg font-medium">
+            <i class="fab fa-instagram text-2xl"></i> @robinhodiesel
+        </a>
+        <p class="text-sm text-gray-600">&copy; Robinho Diesel. Todos os direitos reservados. Sinop - MT.</p>
+    </footer>
+
+    <!-- Script para Dinamismo (Scroll Reveal) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            const checkReveal = () => {
+                const triggerBottom = window.innerHeight * 0.85; // 85% da tela
+                
+                reveals.forEach(reveal => {
+                    const revealTop = reveal.getBoundingClientRect().top;
+                    
+                    if(revealTop < triggerBottom) {
+                        reveal.classList.add('active');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', checkReveal);
+            setTimeout(checkReveal, 100); // Checagem inicial
+        });
+    </script>
+</body>
+</html>
