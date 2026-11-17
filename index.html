@@ -83,13 +83,13 @@
 <body class="antialiased selection:bg-brand-orange selection:text-white">
 
     <!-- HERO SECTION (CABEÇALHO GIGANTE) -->
-    <section class="relative w-full h-[85vh] min-h-[600px] flex items-center justify-center bg-[#041029]">
+    <section class="relative w-full h-[75vh] min-h-[500px] md:h-[85vh] md:min-h-[600px] flex items-center justify-center bg-[#041029]">
         <!-- Fundo de Imagem -->
-        <div class="absolute inset-0 w-full h-full flex justify-center items-center overflow-hidden">
+        <div class="absolute inset-0 w-full h-full overflow-hidden">
             <img 
                 src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RNCpAAyiQ8BT74aoGZXN5OJXgkvlHBwydiSkIwQy3lexyD5Jfchj6muZQgO5CBUpC9aF-sfzjusk-qxryid8D5Lx7_gMVHw_F4Zcd-bA7lEC7EHL25ib-BadTo5ET62jTNkjEonfd0xJT0=s1360-w1360-h1020-rw" 
                 alt="Fundo Robinho Diesel" 
-                class="w-full h-full object-contain max-w-6xl mx-auto opacity-70"
+                class="w-full h-full object-cover object-center opacity-50"
             >
             <!-- Overlay Escuro para dar leitura -->
             <div class="absolute inset-0 bg-gradient-to-b from-[#041029]/90 via-[#041029]/50 to-[#041029]"></div>
@@ -125,7 +125,7 @@
                 </div>
                 <div>
                     <h3 class="font-bold text-white text-lg">Horário de Atendimento</h3>
-                    <p class="text-gray-400 text-sm md:text-base">Segunda a Sexta, 07:00 às 18:00</p>
+                    <p class="text-gray-400 text-sm md:text-base">Segunda a Sexta: 07h00 às 11h00 e 13h00 às 18h00</p>
                     <p class="text-xs text-brand-orange font-semibold mt-1">Exceto Feriados</p>
                 </div>
             </div>
@@ -149,6 +149,52 @@
             
         </div>
     </div>
+
+    <!-- SEÇÃO: LOCALIZAÇÃO -->
+    <section class="py-20 bg-[#020817]">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Venha nos fazer uma visita</h2>
+            <p class="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">Laboratório próprio equipado para garantir o melhor diagnóstico e manutenção para o seu veículo diesel.</p>
+            
+            <!-- Cartão Integrado de Localização -->
+            <div class="bg-brand-card border border-white/10 rounded-2xl overflow-hidden shadow-2xl group">
+                
+                <!-- Imagem Clicável (Abre o Maps) -->
+                <a href="https://maps.app.goo.gl/np3oUSMniLfnscDd9" target="_blank" class="block relative overflow-hidden w-full cursor-pointer bg-[#020817]">
+                    <img 
+                        src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RkgXG_ZztZWOZbb1XrU-FRr5wQhlKBZvXZWbnhVTWAJFlVExnCiSLmLEUj6VknM_V5_N9z16-d-P6C3NCYBJkHlC7CPDZUECM31MKikXUUVrkbVS4U-q-mF9mrnCiZsWkGHF_jCrhNr2yw=s1360-w1360-h1020-rw" 
+                        alt="Fachada Robinho Diesel" 
+                        class="w-full h-auto object-contain transform transition-transform duration-700 group-hover:scale-105"
+                    >
+                    <!-- Overlay que aparece ao passar o mouse -->
+                    <div class="absolute inset-0 bg-brand-darkblue/30 group-hover:bg-brand-darkblue/10 transition-colors flex items-center justify-center">
+                        <div class="bg-brand-blue/90 text-white w-16 h-16 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg">
+                            <i class="fas fa-map-marked-alt text-2xl"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Informações de Endereço e Botão -->
+                <div class="p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 bg-brand-card">
+                    <div class="text-left flex items-start gap-4">
+                        <div class="bg-brand-orange/10 p-3 rounded-xl">
+                            <i class="fas fa-map-marker-alt text-brand-orange text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-lg">Endereço da Oficina</h4>
+                            <p class="text-gray-400 mt-1 text-sm md:text-base">Rua Joffre Camargo Guimarães, 197<br>Jardim Gramado, Sinop - MT</p>
+                        </div>
+                    </div>
+                    
+                    <a href="https://maps.app.goo.gl/np3oUSMniLfnscDd9" target="_blank"
+                       class="btn-hover-effect shrink-0 w-full md:w-auto inline-flex items-center justify-center bg-brand-blue/20 hover:bg-brand-blue/40 border border-brand-blue backdrop-blur-md text-white font-bold py-4 px-8 rounded-xl transition-all shadow-[0_0_15px_rgba(13,71,161,0.3)]">
+                        <i class="fas fa-location-arrow mr-2"></i> Como Chegar
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
 
     <!-- SEÇÃO: NOSSOS SERVIÇOS -->
     <section class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -216,52 +262,6 @@
                 </div>
             </a>
 
-        </div>
-    </section>
-
-    <!-- SEÇÃO: LOCALIZAÇÃO -->
-    <section class="py-20 bg-[#020817]">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Venha nos fazer uma visita</h2>
-            <p class="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">Laboratório próprio equipado para garantir o melhor diagnóstico e manutenção para o seu veículo diesel.</p>
-            
-            <!-- Cartão Integrado de Localização -->
-            <div class="bg-brand-card border border-white/10 rounded-2xl overflow-hidden shadow-2xl group">
-                
-                <!-- Imagem Clicável (Abre o Maps) -->
-                <a href="https://maps.app.goo.gl/np3oUSMniLfnscDd9" target="_blank" class="block relative overflow-hidden w-full cursor-pointer bg-[#020817]">
-                    <img 
-                        src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RkgXG_ZztZWOZbb1XrU-FRr5wQhlKBZvXZWbnhVTWAJFlVExnCiSLmLEUj6VknM_V5_N9z16-d-P6C3NCYBJkHlC7CPDZUECM31MKikXUUVrkbVS4U-q-mF9mrnCiZsWkGHF_jCrhNr2yw=s1360-w1360-h1020-rw" 
-                        alt="Fachada Robinho Diesel" 
-                        class="w-full h-auto object-contain transform transition-transform duration-700 group-hover:scale-105"
-                    >
-                    <!-- Overlay que aparece ao passar o mouse -->
-                    <div class="absolute inset-0 bg-brand-darkblue/30 group-hover:bg-brand-darkblue/10 transition-colors flex items-center justify-center">
-                        <div class="bg-brand-blue/90 text-white w-16 h-16 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg">
-                            <i class="fas fa-map-marked-alt text-2xl"></i>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Informações de Endereço e Botão -->
-                <div class="p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 bg-brand-card">
-                    <div class="text-left flex items-start gap-4">
-                        <div class="bg-brand-orange/10 p-3 rounded-xl">
-                            <i class="fas fa-map-marker-alt text-brand-orange text-2xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-white font-bold text-lg">Endereço da Oficina</h4>
-                            <p class="text-gray-400 mt-1 text-sm md:text-base">Rua Joffre Camargo Guimarães, 197<br>Jardim Gramado, Sinop - MT</p>
-                        </div>
-                    </div>
-                    
-                    <a href="https://maps.app.goo.gl/np3oUSMniLfnscDd9" target="_blank"
-                       class="btn-hover-effect shrink-0 w-full md:w-auto inline-flex items-center justify-center bg-brand-blue/20 hover:bg-brand-blue/40 border border-brand-blue backdrop-blur-md text-white font-bold py-4 px-8 rounded-xl transition-all shadow-[0_0_15px_rgba(13,71,161,0.3)]">
-                        <i class="fas fa-location-arrow mr-2"></i> Como Chegar
-                    </a>
-                </div>
-                
-            </div>
         </div>
     </section>
 
